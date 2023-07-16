@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname,"./uploads")));
 app.use(cors({
-    origin: "https://vercel.com/buitr4go-gmailcom/new-egg-ecomerce-y9so",
+    origin: "https://new-egg-ecomerce-y9so.vercel.app",
     credentials: true,
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
