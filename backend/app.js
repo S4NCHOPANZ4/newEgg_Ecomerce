@@ -16,7 +16,6 @@ app.use(cors({
     origin: "https://vercel.com/buitr4go-gmailcom/new-egg-ecomerce-y9so",
     credentials: true,
 }));
-app.use("/", express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -29,7 +28,7 @@ const order = require("./controller/order");
 app.use("/api/v2/user", user)
 app.use("/api/v2/payment", payment)
 app.use("/api/v2/order", order);
-app.use("/", (req, res) => {
+app.use("/test", (req, res) => {
     res.send("hello world!");
 })
 
