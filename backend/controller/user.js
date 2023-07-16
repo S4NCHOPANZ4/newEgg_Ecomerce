@@ -151,6 +151,7 @@ router.get(
   "/getuser",
   isAuthenticated,
   catchAsyncErrors(async (req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://new-egg-ecomerce-y9so.vercel.app');
     try {
       const user = await User.findById(req.user.id);
 
