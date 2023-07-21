@@ -38,17 +38,18 @@ const Signup = () => {
         newForm.append("email", email);
         newForm.append("password", password);
 
-
-        axios.post(`${server}/user/create-user`, newForm, config)
-        .then((res) =>{
-            toast.success(res.data.message);
-            setEmail("")
-            setPassword("")
-            setName("")
-            setAvatar(null)
-        }).catch((err) =>{
-           toast.error(err.response.data.message)
+        axios
+        .post(`${server}/user/create-user`, { name, email, password, avatar })
+        .then((res) => {
+          toast.success(res.data.message);
+          setName("");
+          setEmail("");
+          setPassword("");
+          setAvatar();
         })
+        .catch((error) => {
+          toast.error(error.response.data.message);
+        });
 
     }
 
