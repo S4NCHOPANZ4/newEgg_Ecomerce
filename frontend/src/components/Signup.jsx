@@ -21,15 +21,16 @@ const Signup = () => {
 
 
     const handleFileInputChange = (e) => {
+        const file = e.target.files[0];
         const reader = new FileReader();
     
-        reader.onload = () => {
-          if (reader.readyState === 2) {
-            setAvatar(reader.result);
-          }
+        reader.onloadend = () => {
+          // El resultado de reader.result será la cadena Base64 de la imagen
+          setAvatar(reader.result);
         };
     
-        reader.readAsDataURL(e.target.files[0]);
+        // Leer el contenido del archivo como una cadena Base64
+        reader.readAsDataURL(file);
       };
     
       const handleSubmit = async (e) => {
@@ -59,7 +60,7 @@ const Signup = () => {
         </div>
         <div className='mt-8 sm:mx-auto sm:w-full sm:max-w-md'>
             <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                <form className="space-y-6" onSubmit={(e)=>handleSubmit(e)}>
+                <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name" className='block text-sm font-medium text-gray-700'>
                         Full Name
@@ -157,7 +158,7 @@ const Signup = () => {
                                 <span>Upload a file</span>
                                 <input type="file" name="avatar" id="file-input" accept='.jpg,.jpeg,.png'
                                 className='sr-only'
-                                onChange={(e)=>handleFileInputChange(e)}/>
+                                onChange={handleFileInputChange}/>
                             </label>
                         </div>
                     <div>
