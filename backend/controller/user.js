@@ -18,7 +18,6 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     const jwtKey = jwt.sign(user, process.env.ACTIVATION_SECRET, {
       expiresIn: "5m",
     });
-    console.log(jwtKey, "aa");
 
     const encodedJwtKey = jwtKey.replace(/\./g, "!");
 
@@ -45,7 +44,6 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
   const fileName = req.file.filename;
   const fileUrl = path.join(fileName);
 
-  const avatar = fileUrl;
 
   const user = {
     name: name,
@@ -69,8 +67,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
       message: `please check your email:- ${user.email} to activate your account!`,
     });
   } catch (error) {
-    console.log("uhi8");
-    return next(new ErrorHandler(error.message, 500));
+    return next(fileUrl);
   }
 });
 
