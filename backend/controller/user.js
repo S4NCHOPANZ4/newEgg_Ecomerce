@@ -84,6 +84,9 @@ router.post(
       if (user) {
         return next(new ErrorHandler("User already exists", 400));
       }
+
+      console.log(avatar);
+
       user = await User.create({
         name,
         email,
