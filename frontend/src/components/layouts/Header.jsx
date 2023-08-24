@@ -176,7 +176,7 @@ const Header = ({ activeHeading }) => {
                     <Link to="/profile">
                       <img
                         className="w-[35px] h-[35px] rounded-full"
-                        src={`${backend_url}${user.avatar}`}
+                        src={`${user?.avatar?.url}`}
                         alt=""
                       />
                     </Link>
