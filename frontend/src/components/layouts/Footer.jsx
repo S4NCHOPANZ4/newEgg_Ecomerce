@@ -45,21 +45,7 @@ const Footer = () => {
           />
           <br />
           <p>The home and elements needeed to create beatiful products.</p>
-          <div className="flex items-center mt-[15px]">
-            <AiFillFacebook size={25} className="cursor-pointer" />
-            <AiOutlineTwitter
-              size={25}
-              style={{ marginLeft: "15px", cursor: "pointer" }}
-            />
-            <AiFillInstagram
-              size={25}
-              style={{ marginLeft: "15px", cursor: "pointer" }}
-            />
-            <AiFillYoutube
-              size={25}
-              style={{ marginLeft: "15px", cursor: "pointer" }}
-            />
-          </div>
+         
         </ul>
         <ul className="text-center sm:text-start">
           <h1 className="mb-1 font-semibold">Company</h1>
@@ -116,13 +102,12 @@ const Footer = () => {
         <di className="flex items justify-center">
           <BsLinkedin className="mr-3" color="white" size={30}/>
           <a 
-          className="font-bold text-white hover:underline" 
+          className="font-thin text-gray-400  hover:underline" 
           href="https://www.linkedin.com/in/juan-buitrago-047a4a206/">
             /in/juan-d-buitrago/
           </a>
         </di>
-        <span>© .</span>
-        <span>Terms · Privacy Policy</span>
+
         <div className="sm:block flex items-center justify-center w-full">
           <img
             src="https://hamart-shop.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffooter-payment.a37c49ac.png&w=640&q=75"
