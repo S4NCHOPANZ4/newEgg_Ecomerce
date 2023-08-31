@@ -102,7 +102,7 @@ const Footer = () => {
         <di className="flex items justify-center">
           <BsLinkedin className="mr-3" color="white" size={30}/>
           <a 
-          className="font-thin text-gray-400  hover:underline" 
+          className="font-semibold text-gray-400  hover:underline" 
           href="https://www.linkedin.com/in/juan-buitrago-047a4a206/">
             /in/juan-d-buitrago/
           </a>
