@@ -5,6 +5,7 @@ import {
   AiFillYoutube,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import {BsLinkedin} from "react-icons/bs"
 import {
   footerProductLinks,
   footerSupportLinks,
@@ -112,7 +113,15 @@ const Footer = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
         text-center pt-2 text-gray-400 text-sm pb-8"
       >
-        <span>© 2020 Becodemy. All rights reserved.</span>
+        <di className="flex items justify-center">
+          <BsLinkedin className="mr-3" color="white" size={30}/>
+          <a 
+          className="font-bold text-white hover:underline" 
+          href="https://www.linkedin.com/in/juan-buitrago-047a4a206/">
+            /in/juan-d-buitrago/
+          </a>
+        </di>
+        <span>© .</span>
         <span>Terms · Privacy Policy</span>
         <div className="sm:block flex items-center justify-center w-full">
           <img
